@@ -1,0 +1,34 @@
+#include "push_swap.h"
+
+void init_args(t_args *args)
+{
+    args->adaptive = 0;
+    args->simple = 0;
+    args->medium = 0;
+    args->complex = 0;
+    args->bench = 0;
+}
+
+void check_arg(char *arg, t_args *args)
+{
+	if (ft_strcmp(arg, "--adaptive") == 0)
+		args->adaptive++;
+	else if (ft_strcmp(arg, "--simple") == 0)
+		args->simple++;
+	else if (ft_strcmp(arg, "--medium") == 0)
+		args->medium++;
+	else if (ft_strmcp(arg, "--complex") == 0)
+		args->complex++;
+	else if (ft_strcmp(arg, "--bench") == 0)
+		args->bench++;
+}
+
+void valid_args(t_args args)
+{
+	if (args.adaptive + args.simple + args.medium + args.complex > 1)
+		args_error();
+	else if (args.bench > 1)
+		args_error();
+	else
+		return ;
+}
