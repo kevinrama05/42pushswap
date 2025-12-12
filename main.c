@@ -12,18 +12,19 @@
 
 #include "push_swap.h"
 
-int ft_strcmp(char *s1, char *s2)
-{
-	int i;
-	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i])
-		i++;
-	return (s1[i] - s2[i]);
-}
-
 int main(int argc, char **argv)
 {
-    t_args args;
-    init_args(&args);
-    check_arg(argv[1], &args);
+    t_args a;
+	int *list;
+	int *copy_list;
+
+    init_args(&a);
+    check_arg(argv[1], &a);
+	check_arg(argv[2], &a);
+	valid_args(a);
+	a.args = a.simple + a.medium + a.complex + a.complex + a.adaptive;
+	a.args += a.bench;
+	if (a.simple + a.medium + a.complex + a.adaptive == 0)
+		a.adaptive++;
+	list = create_list(argv + 1 + a.args, argc - 1 - a.args);
 }

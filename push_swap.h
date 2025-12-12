@@ -23,5 +23,13 @@ typedef struct s_args
     int complex;
     int args;
 }   t_args;
+void init_args(t_args *args);
+void check_arg(char *arg, t_args *args);
+void valid_args(t_args args);
+
+void args_error(void);
+void invalid_input_error(int *arr);
+
+int *create_list(char **args, int size);
 
 #endif
