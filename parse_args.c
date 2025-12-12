@@ -64,3 +64,18 @@ int *create_list(char **args, int size)
     }
     return (arr);
 }
+
+int *ft_copy_list(int *arr, int size)
+{
+	int i;
+	int *a;
+
+	a = (int *)malloc(sizeof(int) * size);
+	i = 0;
+	while (i < size)
+	{
+		a[i] = arr[i];
+		i++;
+	}
+	return (a);
+}

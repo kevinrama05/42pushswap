@@ -27,4 +27,8 @@ int main(int argc, char **argv)
 	if (a.simple + a.medium + a.complex + a.adaptive == 0)
 		a.adaptive++;
 	list = create_list(argv + 1 + a.args, argc - 1 - a.args);
+	copy_list = ft_copy_list(list, argc - 1 - a.args);
+	bubble_sort(&copy_list, argc - 1 - a.args);
+	if (dup_checker(copy_list, argc - 1 - a.args) == 1)
+		duplicate_error(list, copy_list);
 }

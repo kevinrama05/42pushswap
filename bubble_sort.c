@@ -23,11 +23,13 @@ static int is_sorted(int *arr, int size)
     return (1);
 }
 
-int *bubble_sort(int *arr, int size)
+void *bubble_sort(int **a, int size)
 {
     int i;
     int j;
+    int *arr;
 
+    arr = *a;
     i = 0;
     j = 0;
     while (i < size - 1)
@@ -43,5 +45,18 @@ int *bubble_sort(int *arr, int size)
         j = 0;
         i++;
     }
-    return (arr);
+}
+
+int dup_checker(int *arr, int size)
+{
+    int i;
+
+    i = 0;
+    while (i < size - 1)
+    {
+        if (arr[i] == arr[i + 1])
+            return (1);
+        i++;
+    }
+    return (0);
 }

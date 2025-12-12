@@ -31,5 +31,8 @@ void args_error(void);
 void invalid_input_error(int *arr);
 
 int *create_list(char **args, int size);
+int *ft_copy_list(int *arr, int size);
 
+void *bubble_sort(int **a, int size);
+int dup_checker(int *arr, int size);
 #endif

@@ -14,3 +14,10 @@ void invalid_input_error(int *arr)
 	exit(1);
 }
 
+void duplicate_error(int *arr, int *copy)
+{
+	free(arr);
+	free(copy);
+	write(1, "Error\n", 6);
+	exit(1);
+}
