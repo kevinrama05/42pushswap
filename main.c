@@ -3,14 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrama10 <ekrama10@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kerama <kerama@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 11:18:40 by ekrama10          #+#    #+#             */
-/*   Updated: 2025/12/11 11:36:13 by ekrama10         ###   ########.fr       */
+/*   Updated: 2025/12/12 14:18:47 by kerama           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
+
+void print_array(int *arr, int size)
+{
+	printf("[");
+	for (int i = 0; i < size - 1; i++)
+	{
+		printf("%d, ", arr[i]);
+	}
+	printf("%d]", arr[size - 1]);
+}
 
 int main(int argc, char **argv)
 {
@@ -31,4 +42,9 @@ int main(int argc, char **argv)
 	bubble_sort(&copy_list, argc - 1 - a.args);
 	if (dup_checker(copy_list, argc - 1 - a.args) == 1)
 		duplicate_error(list, copy_list);
+	print_array(list, argc - 1 - a.args);
+	printf("\n");
+	print_array(copy_list, argc - 1 - a.args);
+	printf("\n");
+	return (0);
 }

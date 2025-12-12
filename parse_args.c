@@ -1,5 +1,6 @@
 #include "push_swap.h"
 #include <stdlib.h>
+#include <limits.h>
 
 static int	ft_atoi(const char *nptr)
 {

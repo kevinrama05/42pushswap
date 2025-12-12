@@ -26,7 +26,7 @@ void check_arg(char *arg, t_args *args)
 		args->simple++;
 	else if (ft_strcmp(arg, "--medium") == 0)
 		args->medium++;
-	else if (ft_strmcp(arg, "--complex") == 0)
+	else if (ft_strcmp(arg, "--complex") == 0)
 		args->complex++;
 	else if (ft_strcmp(arg, "--bench") == 0)
 		args->bench++;

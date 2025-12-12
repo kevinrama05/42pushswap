@@ -1,51 +1,42 @@
 #include "push_swap.h"
 
-static void ft_swap(int *a, int *b)
+static void ft_swap(int *a, int *b, int *swapped)
 {
     int temp;
 
     temp = *a;
     *a = *b;
     *b = temp;
+    *swapped = 1;
 }
 
-static int is_sorted(int *arr, int size)
+void bubble_sort(int **a, int size)
 {
-    int i;
-
-    i = 0;
-    while (i < size - 1)
-    {
-        if (arr[i] > arr[i + 1])
-            return (0);
-        i++;
-    }
-    return (1);
-}
-
-void *bubble_sort(int **a, int size)
-{
+    int *arr;
     int i;
     int j;
-    int *arr;
+    int swapped;
 
     arr = *a;
     i = 0;
     j = 0;
+    swapped = 0;
     while (i < size - 1)
     {
-        if (is_sorted(arr, size) == 1)
-            break ;
-        while (j <= size - i - 1)
+        while (j < size - 1 - i)
         {
             if (arr[j] > arr[j + 1])
-                ft_swap(&arr[j], &arr[j + 1]);
+                ft_swap(&arr[j], &arr[j + 1], &swapped);
             j++;
         }
+        if (swapped == 0)
+            break;
+        swapped = 0;
         j = 0;
         i++;
     }
 }
+
 
 int dup_checker(int *arr, int size)
 {
