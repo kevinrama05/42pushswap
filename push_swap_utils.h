@@ -6,7 +6,7 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 18:24:25 by vgramozi          #+#    #+#             */
-/*   Updated: 2025/12/14 23:20:09 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/15 00:05:18 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,18 @@ void		ft_check_unrecognized_flag(const char *arg);
 char		**ft_collect_numbers(int argc, char **argv, int num_count,
 				t_ps_data *data);
 void		ft_error_exit(void);
-void		ft_build_stack_a(t_ps_data *data, char **num_args, int num_count);
 void		ft_is_sorted(t_ps_data *data);
 
 void		ft_putchar_fd(char c, int fd);
 void		ft_putnbr_fd(int n, int fd);
+void		ft_print_benchmark(t_ps_data *data);
+int			ft_strcmp(const char *s1, const char *s2);
+
+void		ft_solve(t_ps_data *data);
+void		ft_sort_simple(t_ps_data *data);
+// void		ft_sort_radix(t_ps_data *data);
+// void		ft_sort_chunk(t_ps_data *data);
+
+// void		ft_push_min_index(t_ps_data *data, int index);
 
 #endif

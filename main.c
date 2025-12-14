@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_print_utils.c                                   :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/14 23:18:56 by vgramozi          #+#    #+#             */
-/*   Updated: 2025/12/15 00:04:54 by vgramozi         ###   ########.fr       */
+/*   Created: 2025/12/14 23:26:09 by vgramozi          #+#    #+#             */
+/*   Updated: 2025/12/15 00:02:40 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_putchar_fd(char c, int fd)
+static int	ft_push_swap(int argc, char **argv)
 {
-	write(fd, &c, 1);
+	t_ps_data	*data;
+
+	data = ft_init_data();
+	if (!data)
+		return (1);
+	if (ft_parse_arguments(data, argc, argv) == NULL)
+		ft_clean_exit(data, EXIT_FAILURE);
+	ft_solve(data);
+	ft_print_benchmark(data);
+	ft_clean_exit(data, EXIT_SUCCESS);
+	return (0);
 }
 
-void	ft_putnbr_fd(int n, int fd)
+int	main(int argc, char **argv)
 {
-	long	nb;
-
-	nb = n;
-	if (nb < 0)
-	{
-		ft_putchar_fd('-', fd);
-		nb = -nb;
-	}
-	if (nb >= 10)
-		ft_putnbr_fd(nb / 10, fd);
-	ft_putchar_fd((nb % 10) + '0', fd);
-}
-
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2)
-	{
-		s1++;
-		s2++;
-	}
-	return (int)(*s1 - *s2);
+	if (argc < 2)
+		return (0);
+	return (ft_push_swap(argc, argv));
 }

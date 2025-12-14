@@ -1,30 +1,45 @@
-NAME		= push_swap.a
-CC			= cc
-CFLAGS		= -Wall -Wextra -Werror
-AR			= ar rcs
-RM			= rm -f
+# --- PUSH_SWAP MAKEFILE (Flat Structure, using Wildcard) ---
 
-SRC			= binary_search.c\
-			  bubble_sort.c\
-			  errors.c\
-			  flag_validation.c\
-			  parse_args.c\
+# Project name
+NAME = push_swap
+LIBFT_DIR = libft
 
-OBJ			= $(SRC:.c=.o)
+# Use the 'wildcard' function to find all .c files in the current directory
+SRC = $(wildcard *.c)
+
+# Files to exclude from the compilation process if they are in the root (e.g., main.c is required, but if we had a temporary test.c)
+# We won't exclude anything here since all files listed previously are required.
+
+# Object files
+OBJ = $(SRC:.c=.o)
+
+# Main Header File (must be in the root)
+HEADER = push_swap.h
+
+# Compiler and Flags (42 Norm)
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -g
+
+# --- Rules ---
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(AR) $(NAME) $(OBJ)
+	@make -C $(LIBFT_DIR)
+	$(CC) $(CFLAGS) $(OBJ) -L$(LIBFT_DIR) -lft -o $(NAME)
 
-%.o: %.c push_swap.h
+# Compile C files. No -I flag is required since headers are in the same directory.
+%.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+# Clean rules
 clean:
-	$(RM) $(OBJ)
+	@make clean -C $(LIBFT_DIR)
+	rm -f $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	@make fclean -C $(LIBFT_DIR)
+	rm -f $(NAME)
 
 re: fclean all
 
