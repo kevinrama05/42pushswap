@@ -6,11 +6,11 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:34:59 by vgramozi          #+#    #+#             */
-/*   Updated: 2025/12/14 17:36:19 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/14 18:25:22 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_old.h"
 
 static void	ft_swap(int *a, int *b, int *swapped)
 {

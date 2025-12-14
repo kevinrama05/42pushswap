@@ -6,11 +6,11 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:34:56 by vgramozi          #+#    #+#             */
-/*   Updated: 2025/12/14 17:35:35 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/14 18:25:18 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_old.h"
 
 int	binary_search(int *arr, int size, int value)
 {

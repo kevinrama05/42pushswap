@@ -6,11 +6,11 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:35:04 by vgramozi          #+#    #+#             */
-/*   Updated: 2025/12/14 17:53:37 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/14 18:25:26 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_old.h"
 
 static int	ft_strcmp(char *s1, char *s2)
 {

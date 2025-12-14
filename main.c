@@ -6,11 +6,11 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 11:18:40 by ekrama10          #+#    #+#             */
-/*   Updated: 2025/12/14 17:42:40 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/14 18:25:30 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_old.h"
 #include <stdio.h>
 
 void	print_array(int *arr, int size)
