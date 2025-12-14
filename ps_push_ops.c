@@ -6,13 +6,11 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 22:00:04 by vgramozi          #+#    #+#             */
-/*   Updated: 2025/12/14 22:54:51 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/14 23:04:38 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// --- PUSH OPERATIONS ---
 
 void	pa(t_ps_data *data)
 {
