@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_args.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/14 17:35:10 by vgramozi          #+#    #+#             */
+/*   Updated: 2025/12/14 17:37:04 by vgramozi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
-#include <stdlib.h>
 #include <limits.h>
+#include <stdlib.h>
 
 static int	ft_atoi(const char *nptr)
 {
@@ -48,28 +60,28 @@ static int	is_num(char *nptr)
 	return (1);
 }
 
-int *create_list(char **args, int size)
+int	*create_list(char **args, int size)
 {
-    int *arr;
-    int i;
+	int	*arr;
+	int	i;
 
-    arr = (int *)malloc(sizeof(int) * size);
-    i = 0;
-    while (i < size)
-    {
-        if (is_num(args[i]) == 0)
-            invalid_input_error(arr);
-        else
-            arr[i] = ft_atoi(args[i]);
-        i++;
-    }
-    return (arr);
+	arr = (int *)malloc(sizeof(int) * size);
+	i = 0;
+	while (i < size)
+	{
+		if (is_num(args[i]) == 0)
+			invalid_input_error(arr);
+		else
+			arr[i] = ft_atoi(args[i]);
+		i++;
+	}
+	return (arr);
 }
 
-int *ft_copy_list(int *arr, int size)
+int	*ft_copy_list(int *arr, int size)
 {
-	int i;
-	int *a;
+	int	i;
+	int	*a;
 
 	a = (int *)malloc(sizeof(int) * size);
 	i = 0;

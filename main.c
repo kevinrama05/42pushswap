@@ -3,34 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kerama <kerama@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 11:18:40 by ekrama10          #+#    #+#             */
-/*   Updated: 2025/12/12 14:18:47 by kerama           ###   ########.fr       */
+/*   Updated: 2025/12/14 17:36:54 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-void print_array(int *arr, int size)
+void	print_array(int *arr, int size)
 {
+	int	i;
+
+	i = 0;
 	printf("[");
-	for (int i = 0; i < size - 1; i++)
+	while (i < size - 1)
 	{
 		printf("%d, ", arr[i]);
+		i++;
 	}
 	printf("%d]", arr[size - 1]);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    t_args a;
-	int *list;
-	int *copy_list;
+	t_args	a;
+	int		*list;
+	int		*copy_list;
 
-    init_args(&a);
-    check_arg(argv[1], &a);
+	init_args(&a);
+	check_arg(argv[1], &a);
 	check_arg(argv[2], &a);
 	valid_args(a);
 	a.args = a.simple + a.medium + a.complex + a.complex + a.adaptive;

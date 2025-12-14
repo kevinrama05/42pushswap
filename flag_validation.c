@@ -1,24 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   flag_validation.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/14 17:35:04 by vgramozi          #+#    #+#             */
+/*   Updated: 2025/12/14 17:35:58 by vgramozi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-static int ft_strcmp(char *s1, char *s2)
+static int	ft_strcmp(char *s1, char *s2)
 {
-	int i;
+	int	i;
+
 	i = 0;
 	while (s1[i] && s2[i] && s1[i] == s2[i])
 		i++;
 	return (s1[i] - s2[i]);
 }
 
-void init_args(t_args *args)
+void	init_args(t_args *args)
 {
-    args->adaptive = 0;
-    args->simple = 0;
-    args->medium = 0;
-    args->complex = 0;
-    args->bench = 0;
+	args->adaptive = 0;
+	args->simple = 0;
+	args->medium = 0;
+	args->complex = 0;
+	args->bench = 0;
 }
 
-void check_arg(char *arg, t_args *args)
+void	check_arg(char *arg, t_args *args)
 {
 	if (ft_strcmp(arg, "--adaptive") == 0)
 		args->adaptive++;
@@ -32,7 +45,7 @@ void check_arg(char *arg, t_args *args)
 		args->bench++;
 }
 
-void valid_args(t_args args)
+void	valid_args(t_args args)
 {
 	if (args.adaptive + args.simple + args.medium + args.complex > 1)
 		args_error();
