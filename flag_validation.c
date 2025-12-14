@@ -6,7 +6,7 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:35:04 by vgramozi          #+#    #+#             */
-/*   Updated: 2025/12/14 17:35:58 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/14 17:53:37 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ void	check_arg(char *arg, t_args *args)
 void	valid_args(t_args args)
 {
 	if (args.adaptive + args.simple + args.medium + args.complex > 1)
-		args_error();
+		error_exit();
 	else if (args.bench > 1)
-		args_error();
+		error_exit();
 	else
 		return ;
 }

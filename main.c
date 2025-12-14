@@ -6,7 +6,7 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 11:18:40 by ekrama10          #+#    #+#             */
-/*   Updated: 2025/12/14 17:36:54 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/14 17:42:40 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	main(int argc, char **argv)
 	a.args += a.bench;
 	if (a.simple + a.medium + a.complex + a.adaptive == 0)
 		a.adaptive++;
+	// TODO: We should handle the case when the numbers are passed as a single string
 	list = create_list(argv + 1 + a.args, argc - 1 - a.args);
 	copy_list = ft_copy_list(list, argc - 1 - a.args);
 	bubble_sort(&copy_list, argc - 1 - a.args);

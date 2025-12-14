@@ -6,14 +6,14 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:35:02 by vgramozi          #+#    #+#             */
-/*   Updated: 2025/12/14 17:35:56 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/14 17:53:37 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 
-void	args_error(void)
+void	error_exit(void)
 {
 	write(1, "Error\n", 6);
 	exit(1);
