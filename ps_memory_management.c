@@ -6,7 +6,7 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 18:23:04 by vgramozi          #+#    #+#             */
-/*   Updated: 2025/12/14 18:29:37 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/14 18:50:46 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,13 @@ t_ps_data	*ft_init_data(void)
 	data->counts = ft_init_counts();
 	if (!data->a || !data->b || !data->counts)
 		ft_clean_exit(data, EXIT_FAILURE);
+	data->flag_bench = 0;
+	data->flag_simple = 0;
+	data->flag_medium = 0;
+	data->flag_complex = 0;
+	data->flag_adaptive = 0;
+	data->strategy_name = NULL;
+	data->complexity_class = NULL;
 	return (data);
 }
 

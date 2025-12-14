@@ -6,7 +6,7 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 18:30:04 by vgramozi          #+#    #+#             */
-/*   Updated: 2025/12/14 18:31:02 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/14 18:52:49 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	ft_add_node_front(t_stack *stack, t_node *new)
 	stack->size++;
 }
 
-
 t_node	*ft_del_node_front(t_stack *stack)
 {
 	t_node	*temp;
@@ -63,6 +62,37 @@ t_node	*ft_del_node_front(t_stack *stack)
 		stack->head->prev = NULL;
 		temp->next = NULL;
 	}
+	stack->size--;
+	return (temp);
+}
+
+void	ft_add_node_back(t_stack *stack, t_node *new)
+{
+	if (!stack || !new)
+		return ;
+	if (stack->size == 0)
+	{
+		ft_add_node_front(stack, new);
+		return ;
+	}
+	new->prev = stack->tail;
+	stack->tail->next = new;
+	stack->tail = new;
+	stack->size++;
+}
+
+t_node	*ft_del_node_back(t_stack *stack)
+{
+	t_node	*temp;
+
+	if (!stack || stack->size == 0)
+		return (NULL);
+	if (stack->size == 1)
+		return (ft_del_node_front(stack));
+	temp = stack->tail;
+	stack->tail = temp->prev;
+	stack->tail->next = NULL;
+	temp->prev = NULL;
 	stack->size--;
 	return (temp);
 }
