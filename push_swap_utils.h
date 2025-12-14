@@ -6,7 +6,7 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 18:24:25 by vgramozi          #+#    #+#             */
-/*   Updated: 2025/12/14 21:57:18 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/14 23:20:09 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,8 @@ char		**ft_collect_numbers(int argc, char **argv, int num_count,
 void		ft_error_exit(void);
 void		ft_build_stack_a(t_ps_data *data, char **num_args, int num_count);
 void		ft_is_sorted(t_ps_data *data);
+
+void		ft_putchar_fd(char c, int fd);
+void		ft_putnbr_fd(int n, int fd);
 
 #endif

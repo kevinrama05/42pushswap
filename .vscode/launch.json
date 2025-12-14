@@ -3,22 +3,11 @@
   "configurations": [
     {
       "name": "C/C++ Runner: Debug Session",
-      "type": "cppdbg",
+      "type": "lldb",
       "request": "launch",
       "args": [],
-      "stopAtEntry": false,
-      "externalConsole": false,
-      "cwd": "/home/vgramozi/Projects/core/42pushswap",
-      "program": "/home/vgramozi/Projects/core/42pushswap/build/Debug/outDebug",
-      "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        }
-      ]
+      "cwd": "/Users/vangjel.gramozi/Projects/42/42pushswap",
+      "program": "/Users/vangjel.gramozi/Projects/42/42pushswap/build/Debug/outDebug"
     }
   ]
 }
