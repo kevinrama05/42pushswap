@@ -6,7 +6,7 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 23:26:09 by vgramozi          #+#    #+#             */
-/*   Updated: 2025/12/15 19:05:13 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/15 21:43:50 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static int	ft_push_swap(int argc, char **argv)
 	free(num_args);
 	ft_solve(data);
 	ft_print_benchmark(data);
+	// TODO: Have a no exit version of this
 	ft_clean_exit(data, EXIT_SUCCESS);
 	return (0);
 }
