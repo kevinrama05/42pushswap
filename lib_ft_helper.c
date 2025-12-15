@@ -6,7 +6,7 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 18:40:22 by vgramozi          #+#    #+#             */
-/*   Updated: 2025/12/15 18:42:51 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/15 19:02:50 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,10 @@ long	ft_atol(const char *str)
 		str++;
 	}
 	return (result * sign);
+}
+
+void	ft_error_exit(void)
+{
+	ft_putstr_fd("Error\n", STDERR_FILENO);
+	exit(EXIT_FAILURE);
 }

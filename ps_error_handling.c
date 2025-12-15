@@ -6,16 +6,21 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 19:21:40 by vgramozi          #+#    #+#             */
-/*   Updated: 2025/12/15 18:43:22 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/15 19:07:39 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_error_exit(void)
+
+void	ft_check_input(t_ps_data *data, int argc, char **argv)
 {
-	ft_putstr_fd("Error\n", STDERR_FILENO);
-	exit(EXIT_FAILURE);
+	char	**num_args;
+	int		num_count;
+
+	num_args = ft_parse_arguments(data, argc, argv);
+	num_count = ft_get_num_count(argc, argv);
+	ft_build_stack_a(data, num_count, num_args);
 }
 
 static int	ft_check_int_and_range(const char *arg, t_ps_data *data)
@@ -76,18 +81,18 @@ void	ft_build_stack_a(t_ps_data *data, int num_count, char **num_args)
 	ft_check_duplicates(data->a, data);
 }
 
-void	ft_is_sorted(t_ps_data *data)
-{
-	t_node	*current;
+// void	ft_is_sorted(t_ps_data *data)
+// {
+// 	t_node	*current;
 
-	if (data->a->size < 2)
-		ft_clean_exit(data, EXIT_SUCCESS);
-	current = data->a->head;
-	while (current && current->next)
-	{
-		if (current->value > current->next->value)
-			return ;
-		current = current->next;
-	}
-	ft_clean_exit(data, EXIT_SUCCESS);
-}
+// 	if (data->a->size < 2)
+// 		ft_clean_exit(data, EXIT_SUCCESS);
+// 	current = data->a->head;
+// 	while (current && current->next)
+// 	{
+// 		if (current->value > current->next->value)
+// 			return ;
+// 		current = current->next;
+// 	}
+// 	ft_clean_exit(data, EXIT_SUCCESS);
+// }
