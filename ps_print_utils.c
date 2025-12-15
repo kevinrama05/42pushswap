@@ -6,7 +6,7 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 23:18:56 by vgramozi          #+#    #+#             */
-/*   Updated: 2025/12/15 00:04:54 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/15 18:41:51 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,4 @@ void	ft_putnbr_fd(int n, int fd)
 	if (nb >= 10)
 		ft_putnbr_fd(nb / 10, fd);
 	ft_putchar_fd((nb % 10) + '0', fd);
-}
-
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2)
-	{
-		s1++;
-		s2++;
-	}
-	return (int)(*s1 - *s2);
 }

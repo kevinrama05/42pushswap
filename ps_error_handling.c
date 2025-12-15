@@ -6,7 +6,7 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 19:21:40 by vgramozi          #+#    #+#             */
-/*   Updated: 2025/12/14 19:25:22 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/15 18:43:22 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static void	ft_check_duplicates(t_stack *a, t_ps_data *data)
 	}
 }
 
-void	ft_build_stack_a(t_ps_data *data, char **num_args, int num_count)
+void	ft_build_stack_a(t_ps_data *data, int num_count, char **num_args)
 {
 	int		i;
 	int		num;

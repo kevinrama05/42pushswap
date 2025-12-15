@@ -2,7 +2,6 @@
 
 # Project name
 NAME = push_swap
-LIBFT_DIR = libft
 
 # Use the 'wildcard' function to find all .c files in the current directory
 SRC = $(wildcard *.c)
@@ -25,7 +24,6 @@ CFLAGS = -Wall -Wextra -Werror -g
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@make -C $(LIBFT_DIR)
 	$(CC) $(CFLAGS) $(OBJ) -L$(LIBFT_DIR) -lft -o $(NAME)
 
 # Compile C files. No -I flag is required since headers are in the same directory.
@@ -34,11 +32,9 @@ $(NAME): $(OBJ)
 
 # Clean rules
 clean:
-	@make clean -C $(LIBFT_DIR)
 	rm -f $(OBJ)
 
 fclean: clean
-	@make fclean -C $(LIBFT_DIR)
 	rm -f $(NAME)
 
 re: fclean all
