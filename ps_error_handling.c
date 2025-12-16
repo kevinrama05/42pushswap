@@ -6,22 +6,11 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 19:21:40 by vgramozi          #+#    #+#             */
-/*   Updated: 2025/12/15 19:07:39 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/16 19:38:37 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
-void	ft_check_input(t_ps_data *data, int argc, char **argv)
-{
-	char	**num_args;
-	int		num_count;
-
-	num_args = ft_parse_arguments(data, argc, argv);
-	num_count = ft_get_num_count(argc, argv);
-	ft_build_stack_a(data, num_count, num_args);
-}
 
 static int	ft_check_int_and_range(const char *arg, t_ps_data *data)
 {
