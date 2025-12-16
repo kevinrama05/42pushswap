@@ -8,7 +8,7 @@ void	ft_sort_simple(t_ps_data *data)
 	// For MVP run: sort two elements if possible
 	sa(data);
 	sa(data);
-	sb(data);
+	pb(data);
 	if (data->a->size == 2 && data->a->head->value > data->a->head->next->value)
 		sa(data);
 	// ---------------------------------

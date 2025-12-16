@@ -25,8 +25,7 @@ void	ft_solve(t_ps_data *data)
 		data->complexity_class = "O(1)";
 		return ;
 	}
-	if (data->a->size <= 5)
-		ft_sort_simple(data);
+	ft_sort_simple(data);
 	// else if (data->a->size <= 500 && ft_calculate_disorder(data->a) < 0.2)
 	// 	ft_sort_chunk(data);
 	// else
