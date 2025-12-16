@@ -6,7 +6,7 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 19:10:21 by vgramozi          #+#    #+#             */
-/*   Updated: 2025/12/14 19:17:47 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/16 19:54:57 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,9 @@
 
 int	ft_is_strategy_selector(const char *arg)
 {
-	if (ft_strcmp(arg, "--simple") == 0)
-		return (1);
-	if (ft_strcmp(arg, "--medium") == 0)
-		return (1);
-	if (ft_strcmp(arg, "--complex") == 0)
-		return (1);
-	if (ft_strcmp(arg, "--adaptive") == 0)
+	if (ft_strcmp(arg, "--simple") == 0 || ft_strcmp(arg, "--medium") == 0
+		|| ft_strcmp(arg, "--complex") == 0 || ft_strcmp(arg,
+			"--adaptive") == 0)
 		return (1);
 	return (0);
 }
@@ -56,35 +52,27 @@ static void	ft_parse_flags(t_ps_data *data, int argc, char **argv)
 		ft_set_strategy(data, "--adaptive");
 }
 
-int	ft_get_num_count(int argc, char **argv)
+int	ft_get_num_count(char **num_args)
 {
-	int	i;
 	int	count;
 
-	i = 1;
 	count = 0;
-	while (i < argc)
-	{
-		if (ft_is_arg_number(argv[i]))
-			count++;
-		i++;
-	}
+	while (num_args && num_args[count])
+		count++;
 	return (count);
 }
 
 char	**ft_parse_arguments(t_ps_data *data, int argc, char **argv)
 {
-	char	**num_args;
-	int		num_count;
+	char **num_args;
 
 	ft_parse_flags(data, argc, argv);
-	num_count = ft_get_num_count(argc, argv);
-	if (num_count == 0)
+	num_args = ft_collect_numbers(argc, argv, data);
+	if (!num_args || !num_args[0])
 	{
-		if (argc > 1)
+		if (argc > 1 && !num_args)
 			ft_error_exit();
 		ft_clean_exit(data, EXIT_SUCCESS);
 	}
-	num_args = ft_collect_numbers(argc, argv, num_count, data);
 	return (num_args);
 }

@@ -6,7 +6,7 @@
 /*   By: vgramozi <vgramozi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 19:11:33 by vgramozi          #+#    #+#             */
-/*   Updated: 2025/12/14 22:55:44 by vgramozi         ###   ########.fr       */
+/*   Updated: 2025/12/16 19:59:19 by vgramozi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,29 +23,66 @@ int	ft_is_arg_number(const char *arg)
 	return (1);
 }
 
-char	**ft_collect_numbers(int argc, char **argv, int num_count,
-		t_ps_data *data)
+static char	**ft_join_args(int argc, char **argv)
 {
-	char	**num_args;
 	int		i;
-	int		j;
+	char	*tmp;
+	char	*joined;
+	char	**split_res;
 
-	num_args = (char **)malloc(sizeof(char *) * (num_count + 1));
-	if (!num_args)
-		ft_clean_exit(data, EXIT_FAILURE);
 	i = 1;
-	j = 0;
+	joined = ft_strdup("");
 	while (i < argc)
 	{
 		if (ft_is_arg_number(argv[i]))
 		{
-			num_args[j] = argv[i];
-			j++;
+			tmp = ft_strjoin(joined, argv[i]);
+			free(joined);
+			joined = ft_strjoin(tmp, " ");
+			free(tmp);
 		}
 		i++;
 	}
-	num_args[j] = NULL;
-	return (num_args);
+	split_res = ft_split(joined, ' ');
+	free(joined);
+	return (split_res);
+}
+
+char	**ft_collect_numbers(int argc, char **argv, t_ps_data *data)
+{
+	char	**res;
+
+	if (argc == 2 && ft_is_arg_number(argv[1]))
+		res = ft_split(argv[1], ' ');
+	else
+		res = ft_join_args(argc, argv);
+	if (!res)
+		ft_clean_exit(data, EXIT_FAILURE);
+	return (res);
+}
+
+void	ft_index_stack(t_stack *a)
+{
+	t_node	*curr;
+	t_node	*compare;
+	int		idx;
+
+	if (!a || a->size == 0)
+		return ;
+	curr = a->head;
+	while (curr)
+	{
+		idx = 0;
+		compare = a->head;
+		while (compare)
+		{
+			if (curr->value > compare->value)
+				idx++;
+			compare = compare->next;
+		}
+		curr->index = idx;
+		curr = curr->next;
+	}
 }
 
 void	ft_assign_strategy_details(t_ps_data *data, const char *arg)

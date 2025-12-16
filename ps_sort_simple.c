@@ -6,6 +6,9 @@ void	ft_sort_simple(t_ps_data *data)
 	data->complexity_class = "O(n^2)";
 	// --- TEMPORARY CRASH AVOIDANCE ---
 	// For MVP run: sort two elements if possible
+	sa(data);
+	sa(data);
+	sb(data);
 	if (data->a->size == 2 && data->a->head->value > data->a->head->next->value)
 		sa(data);
 	// ---------------------------------
